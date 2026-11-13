@@ -7,7 +7,7 @@
 [![PyPI](https://img.shields.io/pypi/v/dwdpheno.svg)](https://pypi.org/project/dwdpheno/)
 [![Python](https://img.shields.io/pypi/pyversions/dwdpheno.svg)](https://pypi.org/project/dwdpheno/)
 [![CI](https://github.com/Bluerrror/DWDPheno/actions/workflows/ci.yml/badge.svg)](https://github.com/Bluerrror/DWDPheno/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Bluerrror/DWDPheno/blob/main/LICENSE)
 [![Data: DWD CC BY 4.0](https://img.shields.io/badge/data-DWD%20CC%20BY%204.0-2a7ab0.svg)](https://www.dwd.de/EN/service/copyright/copyright_artikel.html)
 
 [Install](#installation) ·
@@ -363,7 +363,7 @@ ax.figure.savefig("bbch_series.png", dpi=150)
 ```
 
 <p align="center">
-  <img src="docs/img/bbch_series.png" alt="BBCH observations and PCHIP curves of maize, winter barley and winter wheat at Bad Emstal-Merxhausen, 2020-2023, with doubtful and corrected observations marked" width="100%">
+  <img src="https://raw.githubusercontent.com/Bluerrror/DWDPheno/main/docs/img/bbch_series.png" alt="BBCH observations and PCHIP curves of maize, winter barley and winter wheat at Bad Emstal-Merxhausen, 2020-2023, with doubtful and corrected observations marked" width="100%">
 </p>
 
 `plot_station(obs, station_id, crops=None, ax=None, years=None, quality=None, quality_level=None)`
@@ -399,7 +399,7 @@ ax = dp.plot_series(obs, station_id=[12522, 7857, 9389, 10953], years=2023,
 ```
 
 <p align="center">
-  <img src="docs/img/compare_stations.png" alt="Winter wheat BBCH curves of season 2023 at Rerik, Kirchdorf b. Sulingen, Grebenau and Ingolstadt on a day-of-season axis" width="100%">
+  <img src="https://raw.githubusercontent.com/Bluerrror/DWDPheno/main/docs/img/compare_stations.png" alt="Winter wheat BBCH curves of season 2023 at Rerik, Kirchdorf b. Sulingen, Grebenau and Ingolstadt on a day-of-season axis" width="100%">
 </p>
 
 All four reached stem elongation (BBCH 31) within five days of each other (days 109–114, around
@@ -433,7 +433,7 @@ ax = dp.plot_phase_trend(long, phases=["beginning of shooting", "beginning of he
 ```
 
 <p align="center">
-  <img src="docs/img/phase_trends.png" alt="Day of year of shooting, heading, yellow ripeness and harvest of winter wheat at Niederkaufungen 1991-2024 with OLS trend lines" width="100%">
+  <img src="https://raw.githubusercontent.com/Bluerrror/DWDPheno/main/docs/img/phase_trends.png" alt="Day of year of shooting, heading, yellow ripeness and harvest of winter wheat at Niederkaufungen 1991-2024 with OLS trend lines" width="100%">
 </p>
 
 At Niederkaufungen, heading has moved 4.4 days per decade earlier since 1991 and yellow ripeness
@@ -529,7 +529,7 @@ selections run from the cache in seconds.
 
 ## DWDPheno Studio — desktop app
 <!-- STUDIO:BEGIN -->
-<p align="center"><img src="docs/img/studio-map.png" width="900" alt="DWDPheno Studio: map of Germany with the stations that observed the chosen crops"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/Bluerrror/DWDPheno/main/docs/img/studio-map.png" width="900" alt="DWDPheno Studio: map of Germany with the stations that observed the chosen crops"></p>
 
 **DWDPheno Studio** is a desktop application for the same data, for people who'd rather click than
 code. Its engine is native Fortran, and it shows the data on a map and in charts. Everything in it
@@ -555,16 +555,16 @@ is in English except the local names of stations and places.
 
 <table>
 <tr>
-<td><img src="docs/img/studio-series.png" alt="BBCH time series of one station, three crops"></td>
-<td><img src="docs/img/studio-compare.png" alt="Four stations overlaid on the day-of-season axis"></td>
+<td><img src="https://raw.githubusercontent.com/Bluerrror/DWDPheno/main/docs/img/studio-series.png" alt="BBCH time series of one station, three crops"></td>
+<td><img src="https://raw.githubusercontent.com/Bluerrror/DWDPheno/main/docs/img/studio-compare.png" alt="Four stations overlaid on the day-of-season axis"></td>
 </tr>
 <tr>
 <td align="center"><sub>BBCH stages on their true dates with the PCHIP curve per season</sub></td>
 <td align="center"><sub>Four stations compared on the day-of-season axis</sub></td>
 </tr>
 <tr>
-<td><img src="docs/img/studio-timing.png" alt="Phase timing with trend lines"></td>
-<td><img src="docs/img/studio-summary.png" alt="Summary table with quality counts"></td>
+<td><img src="https://raw.githubusercontent.com/Bluerrror/DWDPheno/main/docs/img/studio-timing.png" alt="Phase timing with trend lines"></td>
+<td><img src="https://raw.githubusercontent.com/Bluerrror/DWDPheno/main/docs/img/studio-summary.png" alt="Summary table with quality counts"></td>
 </tr>
 <tr>
 <td align="center"><sub>Heading dates per year and trend for three stations</sub></td>
@@ -619,7 +619,7 @@ This package is not affiliated with or endorsed by the DWD.
 
 ## Citation
 
-If `dwdpheno` helps your work, please cite it (see [`CITATION.cff`](CITATION.cff), or use
+If `dwdpheno` helps your work, please cite it (see [`CITATION.cff`](https://github.com/Bluerrror/DWDPheno/blob/main/CITATION.cff), or use
 GitHub's "Cite this repository" button) and credit the DWD as the data source:
 
 ```bibtex
@@ -635,9 +635,9 @@ GitHub's "Cite this repository" button) and credit the DWD as the data source:
 
 ## Contributing
 
-Issues and pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md). The tests run
+Issues and pull requests are welcome. See [CONTRIBUTING.md](https://github.com/Bluerrror/DWDPheno/blob/main/CONTRIBUTING.md). The tests run
 offline against trimmed real DWD files: `pip install -e ".[test,plot]"` and then `pytest`.
 
 ## Licence
 
-[MIT](LICENSE) © 2026 Shahab A. Shojaeezadeh
+[MIT](https://github.com/Bluerrror/DWDPheno/blob/main/LICENSE) © 2026 Shahab A. Shojaeezadeh

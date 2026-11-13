@@ -35,4 +35,17 @@ jobs:
         with:
           name: dist
           path: dist/
+      - name: Skip versions that are already on PyPI
+        id: pypi
+        run: |
+          v=$(ls dist/*.tar.gz | sed -E 's/.*-([^-]+)\.tar\.gz$//')
+          code=$(curl -s -o /dev/null -w '%{http_code}' "https://pypi.org/pypi/dwdpheno/$v/json")
+          echo "version=$v" >> "$GITHUB_OUTPUT"
+          if [ "$code" = 200 ]; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+            echo "dwdpheno $v is already on PyPI - nothing to upload" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
       - uses: pypa/gh-action-pypi-publish@release/v1
+        if: steps.pypi.outputs.exists != 'true'

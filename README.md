@@ -20,6 +20,7 @@
 [BBCH series](#bbch-time-series-and-plots) ·
 [CLI](#command-line) ·
 [Desktop app](#dwdpheno-studio--desktop-app) ·
+[**Web app**](https://bluerror.com/dwdpheno/) ·
 [Data & licences](#data-sources-and-licences)
 
 </div>
@@ -50,8 +51,9 @@ phase definitions and BBCH codes in separate files. `dwdpheno` handles all of th
 It depends only on `pandas` and `numpy` (`matplotlib` is optional, for plots) and uses the
 standard library for HTTP.
 
-> **Prefer clicking to coding?** [DWDPheno Studio](#dwdpheno-studio--desktop-app) is a desktop app for Windows and Linux
-> with a map of Germany, station selection, downloads and BBCH plots. Installers are on the
+> **Prefer clicking to coding?** [DWDPheno Studio](#dwdpheno-studio--desktop-app) has a map of Germany, station
+> selection, downloads and BBCH plots. **Use it in your browser at <https://bluerror.com/dwdpheno/>**
+> (nothing to install), or install the desktop app for Windows and Linux from the
 > [releases page](https://github.com/Bluerrror/DWDPheno/releases/latest).
 
 ## Installation
@@ -571,6 +573,12 @@ is in English except the local names of stations and places.
 <td align="center"><sub>Summary statistics with the quality of the observations</sub></td>
 </tr>
 </table>
+
+### Use it online
+
+Open **<https://bluerror.com/dwdpheno/>** in any modern browser. Nothing to install, and it is the
+same application as the desktop version. The online version allows up to 20 crops per download, and a
+download stops after 10 minutes. For larger downloads, use the desktop app or the Python package.
 
 ### Download and install
 

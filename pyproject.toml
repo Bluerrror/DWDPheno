@@ -41,6 +41,7 @@ dwdpheno = "dwdpheno.cli:main"
 
 [project.urls]
 Homepage = "https://github.com/Bluerrror/DWDPheno"
+Web-app = "https://bluerror.com/dwdpheno/"
 Documentation = "https://github.com/Bluerrror/DWDPheno#readme"
 Source = "https://github.com/Bluerrror/DWDPheno"
 Issues = "https://github.com/Bluerrror/DWDPheno/issues"

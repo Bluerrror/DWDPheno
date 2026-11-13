@@ -1,0 +1,5 @@
+* text=auto eol=lf
+# byte-exact DWD files and bundled reference data
+tests/fixtures/** -text
+dwdpheno/data/** -text
+*.png binary

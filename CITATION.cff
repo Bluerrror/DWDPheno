@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use dwdpheno in your work, please cite it as below and acknowledge the data source (Deutscher Wetterdienst)."
+type: software
+title: "dwdpheno: download plant-phenology observations of the German Weather Service (DWD)"
+version: 1.0.0
+date-released: 2026-11-13
+license: MIT
+repository-code: "https://github.com/Bluerrror/DWDPheno"
+url: "https://github.com/Bluerrror/DWDPheno"
+authors:
+  - family-names: Shojaeezadeh
+    given-names: Shahab A.
+    email: shahab2710@gmail.com
+keywords:
+  - phenology
+  - DWD
+  - BBCH
+  - crops
+  - agriculture
+  - climate
+  - open data
+references:
+  - type: data
+    title: "Phenological observations in Germany (annual and immediate reporters)"
+    authors:
+      - name: "Deutscher Wetterdienst (DWD), Climate Data Center"
+    url: "https://opendata.dwd.de/climate_environment/CDC/observations_germany/phenology/"
+    license: CC-BY-4.0

@@ -1,0 +1,64 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dwdpheno"
+dynamic = ["version"]
+description = "Download plant-phenology observations of the German Weather Service (DWD) as tidy pandas tables"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Shahab A. Shojaeezadeh", email = "shahab2710@gmail.com" }]
+maintainers = [{ name = "Shahab A. Shojaeezadeh", email = "shahab2710@gmail.com" }]
+keywords = [
+    "phenology", "DWD", "Deutscher Wetterdienst", "BBCH", "crops", "agriculture",
+    "climate", "open data", "Germany", "pandas",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Atmospheric Science",
+    "Topic :: Scientific/Engineering :: GIS",
+]
+dependencies = ["pandas>=1.5", "numpy>=1.21"]
+
+[project.optional-dependencies]
+plot = ["matplotlib>=3.5"]
+test = ["pytest"]
+
+[project.scripts]
+dwdpheno = "dwdpheno.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Bluerrror/DWDPheno"
+Documentation = "https://github.com/Bluerrror/DWDPheno#readme"
+Source = "https://github.com/Bluerrror/DWDPheno"
+Issues = "https://github.com/Bluerrror/DWDPheno/issues"
+Changelog = "https://github.com/Bluerrror/DWDPheno/blob/main/CHANGELOG.md"
+
+[tool.setuptools]
+include-package-data = false
+
+[tool.setuptools.packages.find]
+include = ["dwdpheno*"]
+
+[tool.setuptools.package-data]
+dwdpheno = ["data/*.txt", "data/*.geojson"]
+
+[tool.setuptools.dynamic]
+version = { attr = "dwdpheno.__version__" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-m 'not network'"
+markers = ["network: needs internet access to opendata.dwd.de (deselected by default; run with -m network)"]

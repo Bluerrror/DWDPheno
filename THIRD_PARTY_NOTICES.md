@@ -123,12 +123,14 @@ shipped with the app (`web/third-party-notices.txt`, also shown in the app under
 | Microsoft.Web.WebView2 SDK (incl. `WebView2Loader`) | 1.0.2210.55 | Windows desktop build | BSD-3-Clause-style Microsoft licence, plus the package's NOTICE | [nuget.org licence](https://www.nuget.org/packages/Microsoft.Web.WebView2/1.0.2210.55/License) |
 | Microsoft Edge WebView2 Runtime bootstrapper (`MicrosoftEdgeWebview2Setup.exe`) | — | Windows installer, run only when the runtime is missing | Microsoft software; packaging it with an app is described as allowed in [Microsoft's distribution guide](https://learn.microsoft.com/en-us/microsoft-edge/webview2/concepts/distribution). The bootstrapper's own licence terms: **unverified** | — |
 | GNU Fortran runtime (`libgfortran`) and `libgcc` | GCC 16.1.0 (Windows, winlibs MinGW-w64 UCRT, linked statically); GCC 15.2 (Linux, the system's `libgfortran5` is used, not shipped) | Fortran engine | GPL-3.0-or-later WITH GCC-exception-3.1 | [GCC Runtime Library Exception 3.1](https://www.gnu.org/licenses/gcc-exception-3.1.html), [libgfortran source header](https://github.com/gcc-mirror/gcc/blob/master/libgfortran/runtime/main.c) |
-| GNU quad-precision math library (`libquadmath`) | GCC 16.1.0 | Windows engine (`dwdpheno.dll`, `dwdpheno-engine.exe`), linked statically | LGPL-2.1-or-later | [COPYING.LIB](https://github.com/gcc-mirror/gcc/blob/master/libquadmath/COPYING.LIB) |
 | MinGW-w64 runtime | winlibs GCC 16.1.0 build | Windows engine, linked statically | ZPL-2.1 / public domain / BSD-style parts that require their notices | [COPYING.MinGW-w64-runtime](https://github.com/mingw-w64/mingw-w64/blob/master/COPYING.MinGW-w64-runtime/COPYING.MinGW-w64-runtime.txt) |
 | Inno Setup | — | Windows installer | Inno Setup License | [jrsoftware.org/files/is/license.txt](https://jrsoftware.org/files/is/license.txt) |
 
 Not bundled: no web fonts (the UI uses the system font stack) and no third-party icon sets. The app
 icon is an original drawing (`tools/make_icon.ps1`) and the toolbar icons are hand-written inline SVG.
+The Windows engine contains no GNU libquadmath (LGPL) code (from Studio 1.0.1): it uses no quad
+precision, and the one libquadmath function libgfortran refers to (`quadmath_snprintf`, used only to
+print REAL(16) values) is replaced by DWDPheno's own implementation.
 On Linux the engine uses the system's `libgfortran5` and `curl`, which are installed by the package
 manager, not shipped.
 
@@ -137,5 +139,8 @@ manager, not shipped.
 The Studio base map loads tiles directly from `tile.openstreetmap.org` in the user's browser (or in
 WebView2 in the Windows app), shows the OSM attribution in the map corner, sends the normal
 browser Referer (Referrer-Policy `strict-origin-when-cross-origin`), does not prefetch or store
-tiles, and can be switched off ("base map"). The OSM tile servers are a donated service with no
+tiles, and can be switched off ("base map"). The Windows app (from Studio 1.0.1) adds
+`DWDPheno-Studio/<version> (+https://bluerror.com/dwdpheno/)` to the WebView2 User-Agent, and its
+pages are served from the app-reserved host `dwdpheno-studio.bluerror.com` (a local WebView2
+mapping, never resolved over the network), so tile requests carry that host as their Referer. The OSM tile servers are a donated service with no
 guarantee; heavy use can be blocked under the [Tile Usage Policy](https://operations.osmfoundation.org/policies/tiles/).

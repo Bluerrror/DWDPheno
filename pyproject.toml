@@ -8,8 +8,10 @@ dynamic = ["version"]
 description = "Download plant-phenology observations of the German Weather Service (DWD) as tidy pandas tables"
 readme = "README.md"
 requires-python = ">=3.9"
-license = "MIT"
-license-files = ["LICENSE"]
+# code: MIT; bundled reference data: BKG VG2500 (dl-de/by-2-0) and GeoNames (CC BY 4.0);
+# test fixtures (sdist only): DWD excerpts (CC BY 4.0). Details: THIRD_PARTY_NOTICES.md
+license = "MIT AND CC-BY-4.0 AND DL-DE-BY-2.0"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
 authors = [{ name = "Shahab A. Shojaeezadeh", email = "shahab2710@gmail.com" }]
 maintainers = [{ name = "Shahab A. Shojaeezadeh", email = "shahab2710@gmail.com" }]
 keywords = [

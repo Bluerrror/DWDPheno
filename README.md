@@ -588,10 +588,10 @@ everything it needs is inside the installer.
 
 | Platform | File | How to install |
 |---|---|---|
-| **Windows 10 / 11** (x64) | `DWDPheno-Studio-1.0.0-setup.exe` | Run it. It installs for the current user without administrator rights (or for all users, if you choose). It uses the Microsoft Edge WebView2 runtime, which comes with Windows 11 and is installed automatically when missing. |
-| **Linux** (x64, any distribution) | `DWDPheno-Studio-1.0.0-linux-x64.run` | `chmod +x DWDPheno-Studio-1.0.0-linux-x64.run && ./DWDPheno-Studio-1.0.0-linux-x64.run` installs into `~/.local` (run it with `sudo` to install into `/opt` for all users; `--uninstall` removes it). |
-| **Debian / Ubuntu** | `dwdpheno-studio_1.0.0_amd64.deb` | `sudo apt install ./dwdpheno-studio_1.0.0_amd64.deb` |
-| **Linux** (manual) | `dwdpheno-studio-1.0.0-linux-x64.tar.gz` | `tar xf dwdpheno-studio-1.0.0-linux-x64.tar.gz && cd dwdpheno-studio-1.0.0 && ./install.sh` |
+| **Windows 10 / 11** (x64) | `DWDPheno-Studio-1.0.1-setup.exe` | Run it. It installs for the current user without administrator rights (or for all users, if you choose). It uses the Microsoft Edge WebView2 runtime, which comes with Windows 11 and is installed automatically when missing. |
+| **Linux** (x64, any distribution) | `DWDPheno-Studio-1.0.1-linux-x64.run` | `chmod +x DWDPheno-Studio-1.0.1-linux-x64.run && ./DWDPheno-Studio-1.0.1-linux-x64.run` installs into `~/.local` (run it with `sudo` to install into `/opt` for all users; `--uninstall` removes it). |
+| **Debian / Ubuntu** | `dwdpheno-studio_1.0.1_amd64.deb` | `sudo apt install ./dwdpheno-studio_1.0.1_amd64.deb` |
+| **Linux** (manual) | `dwdpheno-studio-1.0.1-linux-x64.tar.gz` | `tar xf dwdpheno-studio-1.0.1-linux-x64.tar.gz && cd dwdpheno-studio-1.0.1 && ./install.sh` |
 
 On Linux, start **DWDPheno Studio** from the application menu or run `dwdpheno-studio`. It opens in
 your web browser at `http://127.0.0.1:8060` (the server listens on this computer only). The Linux
@@ -603,8 +603,9 @@ Downloaded DWD files are cached in `%LOCALAPPDATA%\DWDPheno\cache` (Windows) or
 files are refreshed daily.
 
 DWDPheno Studio is free for scientific, educational and personal use. It is distributed as
-installers only, and its licence is shown during installation. The Python package in this
-repository is MIT-licensed open source.
+installers only. Its licence is shown during installation and installed next to the program as
+`LICENSE.txt`, together with `THIRD-PARTY-NOTICES.txt`. The Python package in this repository is
+MIT-licensed open source.
 <!-- STUDIO:END -->
 
 ## Licences, data and citations

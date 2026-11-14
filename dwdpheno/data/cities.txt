@@ -1,4 +1,4 @@
-# name;lat;lon;population;state - GeoNames (CC BY 4.0)
+# name;lat;lon;population;state - GeoNames (https://www.geonames.org/), CC BY 4.0; modified: places with population >= 1000, state names added
 Berlin;52.52437;13.41053;3426354;Berlin
 Hamburg;53.55073;9.99302;1973896;Hamburg
 Munich;48.13743;11.57549;1505005;Bayern

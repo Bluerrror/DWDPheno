@@ -8,7 +8,7 @@
 [![Python](https://img.shields.io/pypi/pyversions/dwdpheno.svg)](https://pypi.org/project/dwdpheno/)
 [![CI](https://github.com/Bluerrror/DWDPheno/actions/workflows/ci.yml/badge.svg)](https://github.com/Bluerrror/DWDPheno/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Bluerrror/DWDPheno/blob/main/LICENSE)
-[![Data: DWD CC BY 4.0](https://img.shields.io/badge/data-DWD%20CC%20BY%204.0-2a7ab0.svg)](https://www.dwd.de/EN/service/copyright/copyright_artikel.html)
+[![Data: DWD CC BY 4.0](https://img.shields.io/badge/data-DWD%20CC%20BY%204.0-2a7ab0.svg)](https://www.dwd.de/copyright)
 
 [Install](#installation) ·
 [Quick start](#quick-start) ·
@@ -21,7 +21,7 @@
 [CLI](#command-line) ·
 [Desktop app](#dwdpheno-studio--desktop-app) ·
 [**Web app**](https://bluerror.com/dwdpheno/) ·
-[Data & licences](#data-sources-and-licences)
+[Licences & citations](#licences-data-and-citations)
 
 </div>
 
@@ -607,23 +607,30 @@ installers only, and its licence is shown during installation. The Python packag
 repository is MIT-licensed open source.
 <!-- STUDIO:END -->
 
-## Data sources and licences
+## Licences, data and citations
 
-- **Phenological observations, station metadata, phase definitions**: Deutscher Wetterdienst
-  (DWD), Climate Data Center,
-  <https://opendata.dwd.de/climate_environment/CDC/observations_germany/phenology/>.
-  Licence [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). When you publish results,
-  credit the source: **"Datenbasis: Deutscher Wetterdienst"** (data basis: German Weather Service),
-  and mention any changes you made.
-- **Administrative boundaries** (states and districts, bundled in `dwdpheno/data/`):
-  © GeoBasis-DE / BKG, VG2500,
-  [Datenlizenz Deutschland – Namensnennung – Version 2.0 (dl-de/by-2-0)](https://www.govdata.de/dl-de/by-2-0).
-- **Places** (bundled in `dwdpheno/data/cities.txt`): [GeoNames](https://www.geonames.org/),
-  [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+The `dwdpheno` code is MIT-licensed. The data it downloads and bundles keep their own licences, and
+these require attribution whenever you publish or redistribute them:
 
-The bundled reference data can be rebuilt with `python tools/build_data.py`.
+| Source | Licence | Credit line |
+|---|---|---|
+| Phenological observations, station metadata, phase definitions: Deutscher Wetterdienst (DWD), Climate Data Center, <https://opendata.dwd.de/climate_environment/CDC/observations_germany/phenology/> | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) ([DWD terms](https://www.dwd.de/copyright)) | unchanged data: `Quelle: Deutscher Wetterdienst`; changed data: `Datenbasis: Deutscher Wetterdienst, <what you changed>`, e.g. `..., Einzelwerte gemittelt` |
+| Administrative boundaries VG2500 (bundled in `dwdpheno/data/`): Bundesamt für Kartographie und Geodäsie | [dl-de/by-2-0](https://www.govdata.de/dl-de/by-2-0) ([BKG terms](https://sgx.geodatenzentrum.de/web_public/gdz/lizenz/deu/nutzungsbedingungen_vg2500.pdf)) | `© BKG (2026) dl-de/by-2-0 (Daten verändert), Datenquellen: https://sgx.geodatenzentrum.de/web_public/gdz/datenquellen/datenquellen_vg_nuts.pdf` |
+| Places (bundled in `dwdpheno/data/cities.txt`): [GeoNames](https://www.geonames.org/) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | `GeoNames (https://www.geonames.org/), CC BY 4.0` |
 
-This package is not affiliated with or endorsed by the DWD.
+BBCH principal growth stages follow Meier, U. (ed.) (2018), *Growth stages of mono- and
+dicotyledonous plants: BBCH Monograph*, Open Agrar Repositorium, <https://doi.org/10.5073/20180906-074619>
+(CC BY 4.0). The BBCH curves use monotone piecewise-cubic Hermite interpolation (Fritsch & Carlson
+1980, <https://doi.org/10.1137/0717021>; Fritsch & Butland 1984, <https://doi.org/10.1137/0905021>);
+trends are ordinary least-squares slopes. DWDPheno Studio's base map is © [OpenStreetMap](https://www.openstreetmap.org/copyright)
+contributors (ODbL).
+
+[**THIRD_PARTY_NOTICES.md**](https://github.com/Bluerrror/DWDPheno/blob/main/THIRD_PARTY_NOTICES.md)
+lists every dataset, method, library and service used by the package and by DWDPheno Studio, with
+licences, required source notes, references and where each licence was checked. The bundled
+reference data can be rebuilt with `python tools/build_data.py`.
+
+This package is not affiliated with or endorsed by the DWD, the BKG or GeoNames.
 
 ## Citation
 

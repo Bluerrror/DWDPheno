@@ -1,4 +1,4 @@
-# DWDPheno regions v2 - BKG VG2500 (c) GeoBasis-DE / BKG (dl-de/by-2-0); lon lat WGS84; R <S|C> <code> <nrings> <name>|<type>|<state>|<type_de>
+# DWDPheno regions v2 - VG2500 (c) BKG (2026) dl-de/by-2-0 (Daten veraendert), Datenquellen: https://sgx.geodatenzentrum.de/web_public/gdz/datenquellen/datenquellen_vg_nuts.pdf; lon lat WGS84; R <S|C> <code> <nrings> <name>|<type>|<state>|<type_de>
 R S DE-01 12 Schleswig-Holstein|state|Schleswig-Holstein|Land
 5
 8.71306 54.67763

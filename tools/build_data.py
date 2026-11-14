@@ -1,10 +1,16 @@
 """Regenerate the bundled reference data in ``dwdpheno/data/`` (developer tool, stdlib only).
 
 Sources
-  * Administrative boundaries: BKG VG2500 (c) GeoBasis-DE / BKG, licence dl-de/by-2-0
+  * Administrative boundaries: BKG VG2500, Datenlizenz Deutschland - Namensnennung - 2.0
       https://daten.gdz.bkg.bund.de/produkte/vg/vg2500/aktuell/
-  * Places: GeoNames DE dump, CC BY 4.0
+      Required source note (BKG terms of use for VG2500), with the year of download:
+        (c) BKG (<year>) dl-de/by-2-0 (Daten veraendert), Datenquellen:
+        https://sgx.geodatenzentrum.de/web_public/gdz/datenquellen/datenquellen_vg_nuts.pdf
+  * Places: GeoNames DE dump, CC BY 4.0 (https://www.geonames.org/)
       https://download.geonames.org/export/dump/DE.zip
+  Changes made: reprojected UTM32 -> WGS84 and rounded to 5 decimals, land areas only, English
+  region types added; places filtered (population >= MIN_POP) and assigned to Bundeslaender.
+  See THIRD_PARTY_NOTICES.md.
 
 Outputs in dwdpheno/data/ (all UTF-8, lon/lat WGS84), shipped as package data
   states.geojson     16 Bundeslaender            (map overlay)
@@ -25,6 +31,7 @@ import struct
 import sys
 import urllib.request
 import zipfile
+from datetime import date
 from pathlib import Path
 
 VG_URL = 'https://daten.gdz.bkg.bund.de/produkte/vg/vg2500/aktuell/vg2500_01-01-2026.utm32s.gpkg.zip'
@@ -130,8 +137,9 @@ def main(work: Path) -> None:
                                             ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
 
     # Line format: header, then per region "R kind code nrings name|type|state", per ring "npts", then "lon lat" lines.
-    lines = ['# DWDPheno regions v2 - BKG VG2500 (c) GeoBasis-DE / BKG (dl-de/by-2-0); lon lat WGS84;'
-             ' R <S|C> <code> <nrings> <name>|<type>|<state>|<type_de>']
+    lines = [f'# DWDPheno regions v2 - VG2500 (c) BKG ({date.today().year}) dl-de/by-2-0 (Daten veraendert),'
+             ' Datenquellen: https://sgx.geodatenzentrum.de/web_public/gdz/datenquellen/datenquellen_vg_nuts.pdf;'
+             ' lon lat WGS84; R <S|C> <code> <nrings> <name>|<type>|<state>|<type_de>']
     for kind in ('S', 'C'):
         for code, gen, bez, st, polys in layers[kind]:
             rings = [r for poly in polys for r in poly]
@@ -151,7 +159,8 @@ def main(work: Path) -> None:
         key = (c[1], ADMIN1.get(c[10], ''))
         if key not in cities or int(c[14]) > cities[key][2]:
             cities[key] = (float(c[4]), float(c[5]), int(c[14]))
-    out = ['# name;lat;lon;population;state - GeoNames (CC BY 4.0)']
+    out = ['# name;lat;lon;population;state - GeoNames (https://www.geonames.org/), CC BY 4.0;'
+           f' modified: places with population >= {MIN_POP}, state names added']
     for (nm, st), (lat, lon, pop) in sorted(cities.items(), key=lambda kv: -kv[1][2]):
         out.append(f'{nm};{lat:.5f};{lon:.5f};{pop};{st}')
     (OUT / 'cities.txt').write_text('\n'.join(out) + '\n', encoding='utf-8')

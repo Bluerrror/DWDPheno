@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use dwdpheno in your work, please cite it as below and acknowledge the data source (Deutscher Wetterdienst)."
+message: "If you use dwdpheno in your work, please cite it as below and credit the data sources (Deutscher Wetterdienst; BKG; GeoNames) as described in THIRD_PARTY_NOTICES.md."
 type: software
 title: "dwdpheno: download plant-phenology observations of the German Weather Service (DWD)"
 version: 1.0.0
@@ -26,3 +26,43 @@ references:
       - name: "Deutscher Wetterdienst (DWD), Climate Data Center"
     url: "https://opendata.dwd.de/climate_environment/CDC/observations_germany/phenology/"
     license: CC-BY-4.0
+  - type: data
+    title: "Verwaltungsgebiete 1 : 2 500 000 (VG2500)"
+    authors:
+      - name: "Bundesamt für Kartographie und Geodäsie (BKG)"
+    url: "https://gdz.bkg.bund.de/"
+    license: DL-DE-BY-2.0
+    notes: "© BKG (2026) dl-de/by-2-0 (Daten verändert), Datenquellen: https://sgx.geodatenzentrum.de/web_public/gdz/datenquellen/datenquellen_vg_nuts.pdf"
+  - type: database
+    title: "GeoNames geographical database"
+    authors:
+      - name: "GeoNames"
+    url: "https://www.geonames.org/"
+    license: CC-BY-4.0
+  - type: book
+    title: "Growth stages of mono- and dicotyledonous plants: BBCH Monograph"
+    authors:
+      - family-names: Meier
+        given-names: Uwe
+    editors:
+      - family-names: Meier
+        given-names: Uwe
+    year: 2018
+    publisher:
+      name: "Open Agrar Repositorium"
+    doi: "10.5073/20180906-074619"
+    license: CC-BY-4.0
+  - type: article
+    title: "Monotone Piecewise Cubic Interpolation"
+    authors:
+      - family-names: Fritsch
+        given-names: F. N.
+      - family-names: Carlson
+        given-names: R. E.
+    journal: "SIAM Journal on Numerical Analysis"
+    volume: 17
+    issue: 2
+    start: 238
+    end: 246
+    year: 1980
+    doi: "10.1137/0717021"

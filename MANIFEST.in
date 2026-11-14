@@ -1,4 +1,4 @@
-include LICENSE README.md CHANGELOG.md CITATION.cff CONTRIBUTING.md
+include LICENSE THIRD_PARTY_NOTICES.md README.md CHANGELOG.md CITATION.cff CONTRIBUTING.md
 recursive-include dwdpheno/data *.txt *.geojson
 graft tests
 graft tools
